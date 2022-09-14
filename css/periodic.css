@@ -1,0 +1,142 @@
+.services {
+    height: 85vh;
+    width: 230px;
+
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.items {
+    overflow-y: auto;
+    border-style: dotted none none dotted;
+    border-color: rgb(49, 49, 49);
+    height: 75vh;
+}
+
+
+.services ul {
+    padding: 0;
+    margin: 10px;
+    position: relative;
+}
+
+.services li {
+    width: 175px;
+    list-style-type:none;
+    padding: 5px;
+    margin: 0;
+}
+
+.p_element {
+    padding: 4px;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+.p_element .p_element-inner {
+    background: #202e38;
+    padding: 10px 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 20px);
+    transition: inherit;
+}
+.p_element .title {
+    font: bold 26px 'Lato', sans-serif;
+    margin: 0.3em 0 0;
+    transition: 0.8s ease 600ms;
+}
+.p_element .description {
+    font: 800 12px 'Lato', sans-serif;
+    margin-top: -0.2em;
+}
+
+
+.tooltiptext {
+    visibility: hidden;
+    width: fit-content;
+    font-size: 12px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 99;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -80px;
+  }
+   
+  .list-group-item .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+   
+  .list-group-item:hover .tooltiptext {
+    visibility: visible;
+    transition-delay: 1s;
+  }
+
+
+
+.selected {
+    transform: scale(1.12);
+    z-index: 10;
+}
+.selected .p_element-inner {
+    background: transparent;
+}
+.selected div .title, .selected div .description {
+    -webkit-text-fill-color: #222;
+}
+.selected:after {
+    top: 105%;
+    opacity: 1;
+}
+a.p_element {
+    cursor: pointer;
+}
+.yellow {
+    background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+}
+.yellow .title, .yellow .description {
+    background: -webkit-linear-gradient(#f3f9a6, #cbc634);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.red {
+    background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
+}
+.red .title, .red .description {
+    background: -webkit-linear-gradient(#ff616d, #ffc171);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.blue {
+    background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
+}
+.blue .title, .blue .description {
+    background: -webkit-linear-gradient(#37cfdc, #5a88e5);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.green {
+    background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
+}
+.green .title, .green .description {
+    background: -webkit-linear-gradient(#58ac30, #a7df62);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

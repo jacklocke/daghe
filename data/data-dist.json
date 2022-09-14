@@ -1,0 +1,37 @@
+[
+    {
+		"title": "Li",
+		"desc": "Linkedin",
+        "tooltip": "tooltip sample",
+        "color": "yellow",
+        "url": "https://www.linkedin.com"
+	},
+    {
+		"title": "Fa",
+		"desc": "Facebook",
+        "tooltip": "tooltip sample2",
+        "color": "red",
+        "url": "https://www.facebook.com"
+	},
+    {
+		"title": "Tw",
+		"desc": "Twitter",
+        "tooltip": "tooltip sample3",
+        "color": "blue",
+        "url": "https://www.twitter.com"
+	},
+    {
+		"title": "Wa",
+		"desc": "Google Waves",
+        "tooltip": "tooltip sample4",
+        "color": "green",
+        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	},
+    {
+		"title": "GH",
+		"desc": "GitHub",
+        "tooltip": "yeah science Lorem ipsum carciofi yeah Lorem ipsum carciofi yeah Lorem ipsum carciofi yeah Lorem ipsum carciofi yeah",
+        "color": "red",
+        "url": "https://www.github.com"
+	}
+]

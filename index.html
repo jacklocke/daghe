@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Startpage</title>
+
+   <script
+   src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/periodic.css">
+   
+</head>
+<body>
+ 
+         <div class = "container">
+            <h2>Daghe Startpage</h2>
+
+            <!--help-->   
+            <button type="button" class="collapsible"><img class="icon" src="assets/question.png"/></button>
+            <div class="collapsible_content">
+               <h3><a>Notes</a></h3>
+               <ul>
+                  <li>g: or google: for google search</li>
+                  <li>d: or duck: for duckduckgo search</li>
+                  <li>...(coming soon?)</li>
+               </ul>
+            </div>
+
+            <!-- side GIF-->
+            <img id="sideGIF" src="assets/side.gif" />
+
+            <!--clock-->
+            <div id="clock" onload="currentTime()"></div>
+
+            <!-- links -->
+            <div class="services">
+
+               <div class="form__group">
+                  <input type="input" class="form__field" placeholder="Name" name="autofill" id='autofill' required />
+                  <label for="autofill" class="form__label">Run...</label>
+                  <img class="icon" src="assets/clear.png" onclick="$('#autofill').val('');$('#autofill').keyup();lastActions();" />
+               </div>
+
+               <div id="item_container" class="items">
+
+                  <br>
+
+                  <ul class = "list-group" id = "newList">
+                     
+                     <!-- AREA FOR LINK CREATION
+                        <li class="list-group-item">
+                           <a href="#linkedin_website">
+                                 <div class="p_element yellow" >
+                                    <div class="p_element-inner"  data-description="cixo">
+                                       <div class="title">Li</div>
+                                       <div class="description">LinkedIn</div>
+                                    </div>
+                              </div>
+                           </a><span class="tooltiptext">data description 1</span>
+                        </li>
+                        -->
+
+                  </ul>
+               </div>
+            </div>
+
+         </div>
+
+
+         <!-- API footer -->
+         <div id="footer"></div>
+         <p id="footer_content"></p>
+
+
+         <script>
+            $(document).ready(function(){
+               $("#autofill").on("keyup", function() {
+
+                  var value = $(this).val().toLowerCase();
+
+                  if(checkIfFunction()) {
+                     value = '';
+                  }
+
+                  $("#newList li").filter(function() {
+
+                     var _texts = $(this).find('.title').text();
+                     _texts+=" "+$(this).find('.description').text();
+                     _texts+=" "+$(this).find('.tooltiptext').text(); // for searching also in tooltip
+                     _texts = _texts.toLowerCase();
+                     //console.log( _texts);
+
+                     var _vis = _texts.indexOf(value) > -1;
+                     $(this).toggle(_vis)
+                     
+                     if(_vis) {
+                        if ($(this).hasClass('hided')){
+                           $(this).removeClass('hided');   
+                        }
+                     } else {
+                        if ($(this).hasClass('selected')){
+                           $(this).removeClass('selected');
+                           checkBase();
+
+                        }
+                        $(this).addClass('hided');
+                     }
+
+                  });
+
+                  
+
+               });
+
+               $("#autofill").focus();
+
+
+            });
+
+
+            let json_path = "data/data.json";
+            $.ajax({
+               url: json_path,
+               type: "GET",
+               statusCode: {
+                  404: function() {
+                     // if not found
+                     console.log("missing data/data.json personal file with links");
+                     // using the data-dist.json file
+                     json_path = "data/data-dist.json";
+                     loadData(json_path);
+                  }
+               },
+               success:function(json) {
+                  //code here
+                  loadData(json_path);
+               }
+            });
+
+            function loadData(_path) {
+               /* load data */
+               fetch(_path)
+                  .then((resp) => resp.json())
+                     .then((json) => {
+                        for (let x = 0; x < json.length; x++) {
+                           //console.log(json[x]['title']);
+
+                           let _element = "";
+                           _element+= "<li class=\"list-group-item\">";
+                           _element+= "   <a href=\"" + json[x]["url"] + "\">";
+                           _element+= "         <div class=\"p_element " + json[x]["color"] + "\">";
+                           _element+= "            <div class=\"p_element-inner\">";
+                           _element+= "               <div class=\"title\">" + json[x]["title"] + "</div>";
+                           _element+= "                <div class=\"description\">" + json[x]["desc"] +  "</div>";
+                           _element+= "            </div>";
+                           _element+= "      </div>";
+                           _element+= "   </a><span class=\"tooltiptext\">" + json[x]["tooltip"] + "</span>";
+                           _element+= "</li>";
+
+                           $("#newList").append(_element);
+                        }
+
+                        $(".services li").mouseover(function() {
+                        
+                           if(checkIfFunction()) {
+                              return;
+                           }
+
+                           $(".services li").removeClass("selected");
+                           $(this).addClass("selected");
+                        }).click(function() {
+                           selectOption();
+                        });
+               })
+            }
+
+
+            /* collapsible helper */
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+               this.classList.toggle("active");
+               var content = this.nextElementSibling;
+               if (content.style.display === "block") {
+                  content.style.display = "none";
+               } else {
+                  content.style.display = "block";
+               }
+            });
+            }
+
+
+            /* when user scroll on page, scroll on link div */
+            $(document).bind('mousewheel', function(e){
+               if(e.originalEvent.wheelDelta /120 > 0) {
+                     $('#item_container').scrollTop($('#item_container').scrollTop() - 30);
+               } else {
+                     $('#item_container').scrollTop($('#item_container').scrollTop() +30);
+               }
+            });
+
+
+            /* on inactivity set the focus */
+            function setIdleTimeout(millis, onIdle, onUnidle) {
+               var timeout = 0;
+               startTimer();
+
+               function startTimer() {
+                  timeout = setTimeout(onExpires, millis);
+                  document.addEventListener("mousemove", onActivity);
+                  document.addEventListener("keypress", onActivity);
+               }
+               
+               function onExpires() {
+                  timeout = 0;
+                  onIdle();
+               }
+
+               function onActivity() {
+                  if (timeout) clearTimeout(timeout);
+                  //else onUnidle();
+                  //since the mouse is moving, we turn off our event hooks for 1 second
+                  document.removeEventListener("mousemove", onActivity);
+                  document.removeEventListener("keypress", onActivity);
+                  setTimeout(startTimer, 1000);
+               }
+            }
+
+            setIdleTimeout(1000, function() {
+               lastActions();
+            }, null );
+
+         </script>
+
+
+
+
+
+</body>
+<script src="js/periodic.js"></script>
+<script src="data/area-dist.js"></script>
+<script src="js/WMOcodes.js"></script>
+<script src="js/meteo.js"></script>
+<script src="js/clock.js"></script>
+</html>
