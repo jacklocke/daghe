@@ -13,9 +13,11 @@ fast userful personal start page:
 
 - Fast search URLs (and in tooltips) and open with enter (also select with arrow, use just your keyboard)
 
-- Fast command like **g:** for search in *Google* or **d:** for *DuckDuckGO*
+- Fast command like **g:** for search in *Google* or **d:** for *DuckDuckGO*, **y:** for *Youtube* and more
 
 - Weather in the corner
+
+- Nickname if you add to your URL: ?id=your_name
 
   
 
@@ -28,7 +30,7 @@ fast userful personal start page:
 Configuration files are in **data** folder.
 
   
-Create a data/**area.js** file with latitude and longitude, for example:
+Create a data/**conf.js** file with latitude and longitude, for example:
 
   
 
@@ -38,6 +40,15 @@ Create a data/**area.js** file with latitude and longitude, for example:
     areaName = "Rome";
 
   
+
+and your favorite RSS news link
+
+  
+
+    RSSnews = "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+
+  
+
 
 Copy data/data-dist.json to data/**data.json** and put all your links, for example:
 
@@ -83,14 +94,14 @@ Copy data/data-dist.json to data/**data.json** and put all your links, for examp
 ###  ToDo list
 
  - [x] filter and launch link
- - [ ] better look?
- - [ ] cooler animated (looped?) GIF
- - [ ] different timezone
- - [ ] loader
+ - [x] better look?
+ - [x] cooler animated (looped?) GIF
+ - [x] different timezone for weather
+ - [x] loader
  - [ ] mobile ? is needed?
  - [ ] todo list (saved in a simple localstorage)
- - [ ] news feed? is too much?
  - [ ] better -dist files logic
+ - [ ] new GIF
 
   
 
@@ -101,3 +112,5 @@ Copy data/data-dist.json to data/**data.json** and put all your links, for examp
 ####  Inspiration
 
 - [Oliviale](https://github.com/oliviale) for Periodic table style
+- Background picture is https://www.pexels.com/it-it/foto/italy-sanremo-13659550/
+- Github corners are made by https://tholman.com/github-corners/

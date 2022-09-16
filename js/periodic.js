@@ -143,16 +143,31 @@ function selectOption() {
     //console.log(text.substring(0, text.indexOf(':')));
 
     switch (text.substring(0, text.indexOf(':'))) {
+        case "b":
+        case "brave":
+            window.location.href= "https://search.brave.com/search?q=" + text.substring(text.indexOf(':')+1, text.length);
+            break;
         case "g":
         case "google":
-            //console.log(text.substring(text.indexOf(':')+1, text.length));
             window.location.href= "https://www.google.com/search?q=" + text.substring(text.indexOf(':')+1, text.length);
             break;
         case "d":
         case "duck":
             window.location.href= "https://duckduckgo.com/?q=" + text.substring(text.indexOf(':')+1, text.length);
             break;
-    
+        case "a":
+        case "amazon":
+            window.location.href= "https://www.amazon.it/s?k=" + text.substring(text.indexOf(':')+1, text.length);
+            break;
+        case "w":
+        case "wiki":
+        case "wikipedia":
+            window.location.href= "https://it.wikipedia.org/w/index.php?search=" + text.substring(text.indexOf(':')+1, text.length);
+            break;
+        case "y":
+        case "youtube":
+            window.location.href= "https://www.youtube.com/results?search_query=" + text.substring(text.indexOf(':')+1, text.length);
+            break;
         default:
             break;
     }

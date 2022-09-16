@@ -1,13 +1,10 @@
 let date = new Date();
 let today = date.toISOString().substring(0, 10);
 
-/* please, modify in data/area.js
-// Rome
-const latitude = 41.9027;
-const longitude = 12.4963;
-*/
-
-let url = "https://api.open-meteo.com/v1/forecast?latitude="+latitude+"&longitude="+longitude+"&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&current_weather=true&timezone=Europe%2FBerlin&start_date="+today+"&end_date="+today+"";
+let url = "https://api.open-meteo.com/v1/forecast?latitude="+latitude+"&longitude="+longitude;
+url+="&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&current_weather=true&";
+url+="timezone="+timearea+"%2F"+timezone;
+url+="&start_date="+today+"&end_date="+today+"";
 //console.log(url);
 
 $.getJSON( url, function( data ) {

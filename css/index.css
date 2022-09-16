@@ -5,11 +5,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 body {
-    background: #202e38;
-    font-family: 'Lato', sans-serif;
+    background-color: #202e38;
+
     margin: 0; height: 100%; overflow: hidden;
 
     font-family: 'Source Code Pro', monospace;
+}
+
+.background-wrap:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.1;
+    background-image: url("../assets/back.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
 }
 
 a {
@@ -17,9 +31,26 @@ a {
 }
 
 h2 {
-    color:rgb(38, 226, 0);
+    color:#195c326d;
     padding-left: 20px;
-    font-size: 1.5vw;
+    font-size: 10px;
+    font-style: italic;
+}
+
+#welcome {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    transform: translate(0%, -50%);
+
+    color: #25af5a77;
+    font-size: 25px;
+    pointer-events: none;
+}
+
+#welc_msg {
+    margin-left: 0;
+    pointer-events: none;
 }
 
 .icon {
@@ -27,8 +58,15 @@ h2 {
 }
 
 #sideGIF {
-    padding: 100px;
-    scale: 1.2;
+    scale: 0.7;
+    opacity: 0.3;
+    
+    position: absolute;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
 }
 
 /* collapsible helper */
@@ -63,7 +101,11 @@ h2 {
     position:absolute;
     right:0;
     z-index: 98;
-  }
+}
+
+.note_title {
+    padding-left: 50px;
+}
 
 
 /* Search input */
