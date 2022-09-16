@@ -109,8 +109,9 @@ Copy data/data-dist.json to data/**data.json** and put all your links, for examp
 
   
 
-####  Inspiration
+####  Inspiration and others
 
 - [Oliviale](https://github.com/oliviale) for Periodic table style
 - Background picture is https://www.pexels.com/it-it/foto/italy-sanremo-13659550/
 - Github corners are made by https://tholman.com/github-corners/
+- Presentation video show Keys pressed thanks to https://github.com/AxDSan/KeyPose
