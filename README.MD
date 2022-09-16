@@ -3,6 +3,8 @@
 
 fast userful personal start page:
 
+![preview](img/daghe.gif)
+
   
 
 ###  Features
