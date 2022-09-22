@@ -4,6 +4,8 @@ download project files:
 
 edit/put your files in configuration folder *./daghe/data/*
 
+build:
+
     docker build -t daghe ./
     
     docker run -d --name dagheStart -p 80:80  -p 443:443 <image_id_build>
