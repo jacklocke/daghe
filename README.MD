@@ -36,18 +36,11 @@ Create a data/**conf.js** file with latitude and longitude, for example:
 
   
 
-    // Rome
-    latitude = 41.9027;
-    longitude = 12.4963;
-    areaName = "Rome";
-
-  
-
-and your favorite RSS news link
-
-  
-
-    RSSnews = "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    let latitude = 41.9027;
+    let longitude = 12.4963;
+    let areaName = "Rome";
+    let timearea = "Europe";
+    let timezone = "Berlin";
 
   
 
@@ -102,8 +95,8 @@ Copy data/data-dist.json to data/**data.json** and put all your links, for examp
  - [x] loader
  - [ ] mobile ? is needed?
  - [ ] todo list (saved in a simple localstorage)
- - [ ] better -dist files logic
- - [ ] new GIF
+ - [x] better -dist files logic
+ - [ ] new GIF?
 
   
 

@@ -18,20 +18,3 @@ let latitude = 40.7306;
 let longitude = -73.9352;
 let areaName = "New York";
 */
-
-
-// IF you have another personal file, overwrite variables with your own (userful for develop and git)
-try {
-    $.getScript("data/conf.js", function() {
-        //Script loaded but not necessarily executed
-     });   
-} catch (error) {
-    // no personale file, use latitude and longitude here...
-}
-//  erase this to avoid Console error 404 or create a conf.js file that contains only:
-/*
-// New York
-latitude = 40.7306;
-longitude = -73.9352;
-areaName = "New York";
-*/

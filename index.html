@@ -163,10 +163,9 @@
                statusCode: {
                   404: function() {
                      // if not found
-                     console.log("missing data/data.json personal file with links");
-                     // using the data-dist.json file
-                     json_path = "data/data-dist.json";
-                     loadData(json_path);
+                     console.log("missing /data/data.json!");
+                     alert("missing /data/data.json , please use /data/data-dist.json to create your own")
+
                   }
                },
                success:function(json) {
@@ -280,12 +279,25 @@
  </div>
 </body>
 <script src="js/periodic.js"></script>
-<script src="data/conf-dist.js"></script>
 <script src="js/WMOcodes.js"></script>
-<script src="js/meteo.js"></script>
-<script src="js/clock.js"></script>
-<script src="js/welcome.js"></script>
 <script>
+
+let conf_path = "data/conf.js";
+try {
+      $.getScript(conf_path, function() {
+            //only if I have conf data:
+            $.getScript("js/meteo.js", function() {});   
+            $.getScript("js/welcome.js", function() {});   
+            $.getScript("js/clock.js", function() {});   
+      }).fail(function(){
+               // if not found
+               console.log("missing /data/conf.js");
+               alert("missing /data/conf.js , please use /data/conf-dist.json to create your own")
+      });
+} catch (error) {
+
+}
+
       /* when load is complete */
    $(window).ready(function() {
          let delay = 0;
