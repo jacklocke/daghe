@@ -140,3 +140,21 @@ a.p_element {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.orange {
+    background: linear-gradient(to bottom right, #eb7200 0%, #e1b56e 100%);
+}
+.orange .title, .orange .description {
+    background: -webkit-linear-gradient(#eb7200, #e1b56e);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.purple {
+    background: linear-gradient(to bottom right, #9d31e9 0%, #9840d6 100%);
+}
+.purple .title, .purple .description {
+    background: -webkit-linear-gradient(#9d31e9, #9840d6);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
