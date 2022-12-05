@@ -14,6 +14,13 @@
     height: 75vh;
 }
 
+.icon {
+    height: 1rem;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
 
 .services ul {
     padding: 0;

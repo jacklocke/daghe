@@ -1,0 +1,57 @@
+#dock {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+}
+
+#iconbar {
+    text-align: center;
+}
+
+#iconbar svg {
+    height: 2rem;
+    padding: 5px;
+}
+
+
+#iconbar ul {
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px;
+    position: relative;
+}
+
+#iconbar ul li {
+    display: block;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+
+#iconbar a {
+    display: block;
+    fill: #686868;
+    transition: fill 0.125s ease-in-out;
+}
+
+#iconbar a:focus,
+#iconbar a:hover {
+    animation: slime 0.75s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    fill: hsl(0, 0%, 85%);
+    outline: none;
+}
+
+#iconbar li:nth-child(1) a:focus,
+#iconbar li:nth-child(1) a:hover { fill: #ef3625; } /* Gmail */
+#iconbar li:nth-child(2) a:focus,
+#iconbar li:nth-child(2) a:hover { fill: #2b75ee; } /* Calendar */
+#iconbar li:nth-child(3) a:focus,
+#iconbar li:nth-child(3) a:hover { fill: #fab700; } /* Keep */
+/* dev-box */
+#iconbar li:nth-child(5) a:focus,
+#iconbar li:nth-child(5) a:hover { fill: #19a0e3; } /* Telegram */
+#iconbar li:nth-child(6) a:focus,
+#iconbar li:nth-child(6) a:hover { fill: #7e44c5; } /* Github */
+#iconbar li:nth-child(7) a:focus,
+#iconbar li:nth-child(7) a:hover { fill: #7ec735; } /* Gitea */

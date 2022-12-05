@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 body {
-    background-color: #202e38;
+    background-color: #212121;
 
     margin: 0; height: 100%; overflow: hidden;
 
@@ -20,8 +20,10 @@ body {
     min-width: 100%;
     min-height: 100%;
     opacity: 0.1;
+    /*
     background-image: url("../assets/back.jpg");
     background-repeat: no-repeat;
+    */
     background-position: 50% 0;
     background-size: cover;
 }
@@ -30,16 +32,9 @@ a {
     text-decoration: none;
 }
 
-h2 {
-    color:#195c326d;
-    padding-left: 20px;
-    font-size: 10px;
-    font-style: italic;
-}
-
 #welcome {
     position: absolute;
-    top: 30%;
+    top: 70px;
     left: 10px;
     transform: translate(0%, -50%);
 
@@ -62,7 +57,7 @@ h2 {
     opacity: 0.3;
     
     position: absolute;
-    top:10%;
+    top:20%;
     left: 50%;
     transform: translate(-50%, -50%);
 

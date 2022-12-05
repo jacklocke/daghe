@@ -1,4 +1,4 @@
-let _hh = date.getHours();
+let _hh = new Date().getHours();
 let _case = 0;
 let _msg = "Welcome back";
 let _usr = "...";

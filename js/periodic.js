@@ -49,10 +49,10 @@ function checkBase() {
         if ($(selected).hasClass('hided')){
             $(selected).removeClass('selected');  // unselect
             selectFirst();
-         }
+        }
     }
 
-        lastActions();
+        lastActions(1);
 }
 
 /**
@@ -92,7 +92,7 @@ function arrowUpPressed() {
         selected.prev(':not(.hided)').addClass("selected");
     }
 
-        lastActions();
+        lastActions(0);
 }
 
 
@@ -129,7 +129,7 @@ function arrowDownPressed() {
         selected.next(':not(.hided)').addClass("selected");
     }
 
-    lastActions();
+    lastActions(0);
 }
 
 
@@ -193,17 +193,19 @@ function selectFirst () {
 /**
  * actions after every case
  */
-function lastActions() {
+function lastActions(basic) {
 
     // scroll div to an eventually selected link
     if($(".selected").length > 0) {
         $('#item_container').animate( { scrollTop : ($('.selected').position().top) }, 100 );
     }
 
-    // set focus on input and cursor on last letter
-    const input = document.getElementById('autofill');
-    let end = input.value.length;
-    input.setSelectionRange(end, end);
-    input.focus();
+    if(!basic){ // up arrow move it to the left, so if is up or down, move the cursor to the end
+        // set focus on input and cursor on last letter
+        const input = document.getElementById('autofill');
+        let end = input.value.length;
+        input.setSelectionRange(end, end);
+        input.focus();
+    }
     
 }
