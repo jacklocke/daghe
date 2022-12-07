@@ -100,6 +100,18 @@ Copy data/data-dist.json to data/**data.json** and put all your links, for examp
 
 ----
 
+## Different default search
+
+default search is in js/periodic.js file :
+
+    if (selected.length== 0) {
+        window.location.href= "https://www.google.com/search?q=" + text.substring(text.indexOf(':')+1, text.length);
+    }
+
+you can change in everything you want
+
+----
+
   
 
 ###  ToDo list

@@ -50,8 +50,10 @@
 #iconbar li:nth-child(3) a:hover { fill: #fab700; } /* Keep */
 /* dev-box */
 #iconbar li:nth-child(5) a:focus,
-#iconbar li:nth-child(5) a:hover { fill: #19a0e3; } /* Telegram */
+#iconbar li:nth-child(5) a:hover { fill: #25d366; } /* Whatsapp */
 #iconbar li:nth-child(6) a:focus,
-#iconbar li:nth-child(6) a:hover { fill: #7e44c5; } /* Github */
+#iconbar li:nth-child(6) a:hover { fill: #19a0e3; } /* Telegram */
 #iconbar li:nth-child(7) a:focus,
-#iconbar li:nth-child(7) a:hover { fill: #7ec735; } /* Gitea */
+#iconbar li:nth-child(7) a:hover { fill: #7e44c5; } /* Github */
+#iconbar li:nth-child(8) a:focus,
+#iconbar li:nth-child(8) a:hover { fill: #7ec735; } /* Gitea */

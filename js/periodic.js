@@ -178,7 +178,11 @@ function selectOption() {
         console.log($(".selected a").attr('href'));
         window.location.href=$(".selected a").attr('href');
     }
-
+    
+    // in case nothing has been selected, but user input something, search it on Google
+    if (selected.length== 0) {
+        window.location.href= "https://www.google.com/search?q=" + text.substring(text.indexOf(':')+1, text.length);
+    }
 }
 
 /**
