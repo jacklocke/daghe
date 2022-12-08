@@ -180,7 +180,7 @@ function selectOption() {
     }
     
     // in case nothing has been selected, but user input something, search it on Google
-    if (selected.length== 0) {
+    if (text.substring(0, text.indexOf(':')) == "" && selected.length== 0) {
         window.location.href= "https://www.google.com/search?q=" + text.substring(text.indexOf(':')+1, text.length);
     }
 }
