@@ -1,0 +1,22 @@
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+RewriteEngine on
+
+# allow public pages
+RewriteRule ^index.php$ - [L]
+# RewriteRule ^error.html$ - [L]
+# RewriteRule ^404.html$ - [L]
+
+# serve everyone from specific-domain or specific-user-agent
+RewriteCond %{HTTP_REFERER} ^https?://www.miosito.it/areaPrivata/index.php
+RewriteRule ^ - [L]
+RewriteCond %{HTTP_REFERER} ^https?://www.miosito.it/areaPrivata/*
+RewriteRule ^ - [L]
+
+# everybody else receives a forbidden
+RewriteRule ^ - [F]
+
+# ErrorDocument 403 /forbidden.htmls
